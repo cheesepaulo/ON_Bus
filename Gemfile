@@ -22,6 +22,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+# Simple rest client for rails
+gem 'rest-client'
 
 #My Gems
 
@@ -33,8 +35,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # rspec-rails is a testing framework for Rails 3.x, 4.x and 5.0.
-  gem 'rspec', '~> 3.6'
-
+  gem 'rspec-rails', '~> 3.5'
   gem 'pry-byebug'
   # Pre load rspec tests, amazing speed
   gem 'spring-commands-rspec'
