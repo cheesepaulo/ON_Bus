@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+
+  website:
+    build: .
+    command: bash start
+    ports:
+      - '3000:3000'
+    volumes:
+      - '.:/on_bus'
+    volumes_from:
+    - box
+
+  box:
+    image: busybox
+    volumes:
+      - /box
