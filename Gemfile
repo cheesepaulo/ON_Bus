@@ -26,6 +26,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'rest-client'
 
 #My Gems
+gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'jquery-rails'
 
 # Ruby gem for Google Maps Web Service APIs
 gem 'google_maps_service', '~> 0.4.2'
