@@ -1,3 +1,12 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.dropdown-menu > li > a {
+  display: block;
+  padding: 3px 20px;
+  color: #333;
+  white-space: nowrap; // prevent links from randomly breaking onto new lines
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: black;
+    background-color: #f5f5f5;
+  }
+}

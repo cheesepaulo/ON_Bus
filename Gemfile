@@ -28,6 +28,11 @@ gem 'rest-client'
 #My Gems
 gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'jquery-rails'
+gem 'bootstrap-glyphicons'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.3.3'
+end
 
 # Ruby gem for Google Maps Web Service APIs
 gem 'google_maps_service', '~> 0.4.2'
