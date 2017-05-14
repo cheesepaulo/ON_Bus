@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
   root to: 'home#index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  get 'arrival_forecat/:stop_code', to: 'home#arrival_forecast', as: :arrival_forecast
 end

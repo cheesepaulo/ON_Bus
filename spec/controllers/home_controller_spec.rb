@@ -6,5 +6,11 @@ RSpec.describe HomeController, type: :controller do
       get :index
       expect(response.status).to eq(200)
     end
-  end  
+  end
+
+  describe 'GET #arrival_forecast' do
+    subject { get :arrival_forecast, params: { stop_code: 123 } }
+
+    it { is_expected.to have_http_status :ok }
+  end
 end
