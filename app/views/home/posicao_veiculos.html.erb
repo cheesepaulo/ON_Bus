@@ -1,0 +1,20 @@
+<div class="container-fluid">
+
+
+<h1>Hora Ref : <%=@hr_ref%></h1>
+<h3>Posicao dos Onibus</h3>
+
+<ul>
+  <%@veiculos.each do |vs|  %>
+    <li>
+      <%="Onibus:" + vs['p']%>
+      <%=" a:" + vs['a'].to_s %>
+      <%=" py:" + vs['py'].to_s %>
+      <%=" px:" + vs['px'].to_s%>
+    </li>
+  <%end %>
+
+
+</ul>
+
+</div>
