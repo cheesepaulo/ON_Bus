@@ -1,5 +1,5 @@
 require 'rails_helper'
-require './lib/sptrans/api_connection'
+require 'sptrans/api_connection'
 
 describe SPTrans do
   describe ".connect" do
