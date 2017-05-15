@@ -4,6 +4,7 @@
 ![ruby](https://img.shields.io/badge/Ruby-2.4.1-red.svg)
 ![rails](https://img.shields.io/badge/Rails-5.1.0-red.svg)
 ![rails](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)
+[![Codeship](https://img.shields.io/codeship/348f2750-1a67-0135-2583-4eee406cd8c3/master.svg)](https://codeship.com/projects/348f2750-1a67-0135-2583-4eee406cd8c3/status?branch=master)
 [![Code Climate](https://codeclimate.com/github/cheesepaulo/ON_Bus/badges/gpa.svg)](https://codeclimate.com/github/cheesepaulo/ON_Bus)
 [![Issue Count](https://codeclimate.com/github/cheesepaulo/ON_Bus/badges/issue_count.svg)](https://codeclimate.com/github/cheesepaulo/ON_Bus)
 
