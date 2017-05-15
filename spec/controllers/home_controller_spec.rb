@@ -8,8 +8,8 @@ RSpec.describe HomeController, type: :controller do
     end
   end
 
-  describe 'GET #arrival_forecast' do
-    subject { get :arrival_forecast, params: { stop_code: 123 } }
+  describe 'GET #posicao_veiculos' do
+    subject { get :posicao_veiculos, params: { stop_code: 123 } }
 
     it { is_expected.to have_http_status :ok }
   end
