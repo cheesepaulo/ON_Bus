@@ -1,4 +1,4 @@
-require 'sptrans/api_connection'
+require './lib/sptrans/api_connection'
 
 module SPTrans
   class ArrivalForecastSearch
@@ -19,11 +19,13 @@ module SPTrans
       end
     end
 
-    def getBusPosition (line_code)
-    # Recebe uma linha e retorna uma lista com todos os veículos e suas posições lat / long
-      begin
+    def self.getBusPosition(line_code)
+    # Receives a line and returns a list with all vehicles and their lat / long positions
+    begin
+        @client = HTTPClient.new
+        SPTrans.connect(@client)
         response = @client.get "#{API_URL}/Posicao?codigoLinha=#{line_code}", {}
-        JSON.parse(response.body)
+        return JSON.parse(response.body)
       rescue Exception => e
         puts e.message
         puts e.backtrace.inspect
