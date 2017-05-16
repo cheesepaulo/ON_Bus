@@ -9,8 +9,10 @@ RSpec.describe HomeController, type: :controller do
   end
 
   describe 'GET #posicao_veiculos' do
-    subject { get :posicao_veiculos, params: { stop_code: 123 } }
+    subject { get :bus_position, params: { stop_code: 123 } }
 
-    it { is_expected.to have_http_status :ok }
+    xit 'return json sucess' do
+      expectresponse.status.to eql(200)
+    end
   end
 end
