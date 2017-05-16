@@ -22,4 +22,13 @@ describe SPTrans::ArrivalForecastSearch do
       expect(response).to_not be_empty
     end
   end
+
+  describe '#getStopPointsByline' do
+    it "returns a hash with data" do
+      response = @api.getStopPointsByline("175T-10")
+
+      expect(response.class).to eq Hash
+      expect(response).to_not be_empty
+    end
+  end
 end
