@@ -28,14 +28,11 @@ gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'jquery-rails'
 gem 'bootstrap-glyphicons'
 gem "httpclient"
+gem 'google_maps_service', '~> 0.4.2'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
 end
-
-# Ruby gem for Google Maps Web Service APIs
-gem 'google_maps_service', '~> 0.4.2'
-
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
