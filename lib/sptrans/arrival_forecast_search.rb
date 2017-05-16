@@ -11,7 +11,7 @@ module SPTrans
     # Recebe um ponto de parada e retorna uma lista com a previsão
     # de chegada dos veículos até aquele ponto.
       begin
-        response = @client.get "#{API_URL}/Previsao/Parada?codigoParada=#{stop_code}", {}
+        response = @client.get "#{ENV['API_URL']}/Previsao/Parada?codigoParada=#{stop_code}", {}
         JSON.parse(response.body)
       rescue Exception => e
         puts e.message
@@ -22,7 +22,7 @@ module SPTrans
     def getBusPosition(line_code)
     # Receives a line and returns a list with all vehicles and their lat / long positions
       begin
-        response = @client.get "#{API_URL}/Posicao?codigoLinha=#{line_code}", {}
+        response = @client.get "#{ENV['API_URL']}/Posicao?codigoLinha=#{line_code}", {}
         return JSON.parse(response.body)
       rescue Exception => e
         puts e.message
@@ -33,7 +33,7 @@ module SPTrans
     def getStopPointsByline(line_code)
     # Receives a line and returns a list with all Stop Points
       begin
-        response = @client.get "#{API_URL}/Parada/BuscarParadasPorLinha?codigoLinha=#{line_code}", {}
+        response = @client.get "#{ENV['API_URL']}/Parada/BuscarParadasPorLinha?codigoLinha=#{line_code}", {}
         return JSON.parse(response.body)
       rescue Exception => e
         puts e.message

@@ -19,7 +19,7 @@ require './lib/sptrans/arrival_forecast_search'
 Bundler.require(*Rails.groups)
 
 module ONBus
-  class Application < Rails::Application
+  class Application < Rails::Application    
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
 
