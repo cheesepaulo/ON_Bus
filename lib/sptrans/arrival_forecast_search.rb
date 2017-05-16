@@ -21,8 +21,19 @@ module SPTrans
 
     def getBusPosition(line_code)
     # Receives a line and returns a list with all vehicles and their lat / long positions
-    begin
+      begin
         response = @client.get "#{API_URL}/Posicao?codigoLinha=#{line_code}", {}
+        return JSON.parse(response.body)
+      rescue Exception => e
+        puts e.message
+        puts e.backtrace.inspect
+      end
+    end
+
+    def getStopPointsByline(line_code)
+    # Receives a line and returns a list with all Stop Points
+      begin
+        response = @client.get "#{API_URL}/Parada/BuscarParadasPorLinha?codigoLinha=#{line_code}", {}
         return JSON.parse(response.body)
       rescue Exception => e
         puts e.message
