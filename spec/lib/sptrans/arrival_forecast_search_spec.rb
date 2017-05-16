@@ -2,9 +2,12 @@ require 'rails_helper'
 require 'sptrans/arrival_forecast_search'
 
 describe SPTrans::ArrivalForecastSearch do
+  before do
+    @api = SPTrans::ArrivalForecastSearch.new
+  end
   describe '#getUpcomingBus' do
     it "returns a hash with data" do
-      response = described_class.new.getUpcomingBus("4200953")
+      response = @api.getUpcomingBus("4200953")
 
       expect(response.class).to eq Hash
       expect(response).to_not be_empty
@@ -13,7 +16,7 @@ describe SPTrans::ArrivalForecastSearch do
 
   describe '#getBusPosition' do
     it "returns a hash with data" do
-      response = described_class.new.getBusPosition("175T-10")
+      response = @api.getBusPosition("175T-10")
 
       expect(response.class).to eq Hash
       expect(response).to_not be_empty
