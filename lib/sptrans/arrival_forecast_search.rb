@@ -40,5 +40,16 @@ module SPTrans
         puts e.backtrace.inspect
       end
     end
+
+    def getArrivalForecast(stop_code, line_code)
+      begin
+        response = @client.get "#{ENV['API_URL']}/Previsao?codigoParada=#{stop_code}&codigoLinha=#{line_code}", {}
+        return JSON.parse(response.body)
+      rescue Exception => e
+        puts e.message
+        puts e.backtrace.inspect
+      end
+    end
+
   end
 end
