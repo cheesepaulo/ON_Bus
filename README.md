@@ -18,7 +18,7 @@ It is very easy to use: For example, you can search the lines of bus, some locat
 
 You can access on your smartphone, tablet or desktop, the app has a responsive layout that make things adaptive in many resolutions as possible. If you find any problem, have any suggestions or doubts, you can open a issue at this repository.
 
-You are a developer? Help us to make this app bigger and bigger and people's lives better! A little down in this README we have a step-by-step at how you can contribute with us. :)
+Are you a developer? Help us to make this app bigger and bigger and people's lives better! A little down in this README we have a step-by-step at how you can contribute with us. :)
 
 Enjoy it!
 
