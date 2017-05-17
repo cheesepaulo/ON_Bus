@@ -34,7 +34,10 @@ describe SPTrans::ArrivalForecastSearch do
 
   describe '#searchByTerm' do 
     it 'returns a hash with data' do
-      response = @api.searchByTerm("8000")
+      json = JSON.parse(File.read("./spec/fixtures/terms_list.json"))
+      term = json['terms_list'].sample()
+      puts term
+      response = @api.searchByTerm(term)
 
       expect(response.class). to eq Array
       expect(response).to_not be_empty
