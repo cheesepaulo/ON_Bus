@@ -9,6 +9,20 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <%= link_to root_path, class: 'navbar-brand' do %>
+        <%= fa_icon "bus", text: "ON Bus" %>
+      <% end %>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+          <a class="nav-item nav-link" href="#">Contato</a>
+          <a class="nav-item nav-link" href="#">Sobre</a>
+        </div>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>
