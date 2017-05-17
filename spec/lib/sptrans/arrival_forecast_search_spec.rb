@@ -31,12 +31,12 @@ describe SPTrans::ArrivalForecastSearch do
       expect(response).to_not be_empty
     end
   end
-	
-	describe '#searchByTerm' do 
-    it 'returns a hash with data' do
+
+	describe '#searchByTerm' do
+    it 'returns a array with data' do
       response = @api.searchByTerm("8000")
 
-      expect(response.class). to eq Hash
+      expect(response.class).to eq Array
       expect(response).to_not be_empty
     end
   end
@@ -44,7 +44,7 @@ describe SPTrans::ArrivalForecastSearch do
   describe '#getArrivalForecast' do
     it "returns a hash with data" do
       response = @api.getArrivalForecast("4200953","175T-10")
-			
+
       expect(response.class).to eq Hash
       expect(response).to_not be_empty
     end
