@@ -40,5 +40,15 @@ module SPTrans
         puts e.backtrace.inspect
       end
     end
+
+    def searchByTerm(line_code)
+      begin
+        response = @client.get "#{ENV['API_URL']}/Linha/Buscar?termosBusca=#{line_code}", {}
+        return JSON.parse(response.body)
+      rescue Exception => e
+        puts e.message
+        puts e.backtrace.inspect
+      end
+    end
   end
 end
