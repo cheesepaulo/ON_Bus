@@ -29,6 +29,7 @@ gem 'jquery-rails'
 gem 'bootstrap-glyphicons'
 gem "httpclient"
 gem 'google_maps_service', '~> 0.4.2'
+gem 'font-awesome-rails'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
