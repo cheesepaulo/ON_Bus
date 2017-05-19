@@ -7,7 +7,9 @@ describe SPTrans::ArrivalForecastSearch do
   end
   describe '#getUpcomingBus' do
     it "returns a hash with data" do
-      response = @api.getUpcomingBus("4200953")
+      json = JSON.parse(File.read("./spec/fixtures/stop_code_list.json"))
+      stop_code = json['stop_code'].sample()
+      response = @api.getUpcomingBus(stop_code)
 
       expect(response.class).to eq Hash
       expect(response).to_not be_empty
@@ -16,7 +18,9 @@ describe SPTrans::ArrivalForecastSearch do
 
   describe '#getBusPosition' do
     it "returns a hash with data" do
-      response = @api.getBusPosition("175T-10")
+      json = JSON.parse(File.read("./spec/fixtures/line_code_list.json"))
+      line_code = json['line_code'].sample()
+      response = @api.getBusPosition(line_code)
 
       expect(response.class).to eq Hash
       expect(response).to_not be_empty
@@ -25,9 +29,11 @@ describe SPTrans::ArrivalForecastSearch do
 
   describe '#getStopPointsByline' do
     it "returns a hash with data" do
-      response = @api.getStopPointsByline("175T-10")
+      json = JSON.parse(File.read("./spec/fixtures/line_code_list2.json"))
+      line_code = json['line_code'].sample()
+      response = @api.getStopPointsByline(line_code)
 
-      expect(response.class).to eq Hash
+      expect(response.class).to eq Array
       expect(response).to_not be_empty
     end
   end
@@ -36,7 +42,6 @@ describe SPTrans::ArrivalForecastSearch do
     it 'returns a hash with data' do
       json = JSON.parse(File.read("./spec/fixtures/terms_list.json"))
       term = json['terms_list'].sample()
-      puts term
       response = @api.searchByTerm(term)
 
       expect(response.class). to eq Array
