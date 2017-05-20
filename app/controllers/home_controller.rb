@@ -3,7 +3,7 @@ require 'json'
 
 class HomeController < ApplicationController
   # Calling API function to retrieve the buses position of a line
-  def bus_position
+  def getUpcomingBus
     if params[:cod_line].present?
       response = SPTrans::ArrivalForecastSearch.new.getBusPosition(params[:cod_line])
       render json: response
