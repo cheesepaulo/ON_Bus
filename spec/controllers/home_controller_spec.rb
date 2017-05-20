@@ -15,4 +15,10 @@ RSpec.describe HomeController, type: :controller do
       expectresponse.status.to eql(200)
     end
   end
+
+  describe 'GET #getArrivalForecast' do
+    it 'return json success' do
+      
+    end
+  end
 end
