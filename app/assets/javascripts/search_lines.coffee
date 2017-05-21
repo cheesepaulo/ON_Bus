@@ -10,7 +10,7 @@ $(document).ready ->
       list_lines.html('')
       list_lines.append '<b>Informe algum termo para realizar a busca</b>'
       list_lines.slideDown('slow')
-      return;
+      return
 
     $.ajax '/searchByTerm?&search_term=' + search_term,
     type: 'GET'
@@ -23,7 +23,7 @@ $(document).ready ->
         list_lines.append '<b>Não há resultados para sua pesquisa.
         Pesquise por um termo/linha diferente</b>'
         list_lines.slideDown('slow')
-        return;
+        return
 
       if data.length == 0
         list_lines.append '<b>Não há resultados para sua pesquisa.
@@ -33,6 +33,7 @@ $(document).ready ->
           list_lines.append '<a href=' + line['CodigoLinha'] +
           ' class=\'line-link\'><p><strong> Linha ' + line['Letreiro'] +
           '</strong> <br/>' + line['DenominacaoTPTS'] + ', ' +
-           line['DenominacaoTSTP'] + ', Sentido: ' + line['Sentido'] + '</p></a>'
+          line['DenominacaoTSTP'] + ', Sentido: ' + line['Sentido'] +
+          '</p></a>'
 
       list_lines.slideDown('slow')
