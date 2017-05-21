@@ -8,11 +8,25 @@ RSpec.describe HomeController, type: :controller do
     end
   end
 
-  describe 'GET #posicao_veiculos' do
-    subject { get :bus_position, params: { stop_code: 123 } }
+  describe 'GET #getUpcomingBus' do
+    subject { get :getUpcomingBus, params: { stop_code: 123 } }
 
     xit 'return json sucess' do
       expectresponse.status.to eql(200)
+    end
+  end
+
+  describe 'GET #getArrivalForecast' do
+    it 'return json success' do
+
+    end
+  end
+
+  describe 'GET #searchByTerm' do
+    subject { get :searchByTerm, params: { search_term: 8000 } }
+
+    it 'return json sucess' do
+      expect(response.status).to eql(200)
     end
   end
 end

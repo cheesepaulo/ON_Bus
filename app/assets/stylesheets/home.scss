@@ -10,3 +10,21 @@
     background-color: #f5f5f5;
   }
 }
+
+.search-bar {
+  position: relative;
+}
+
+.list-lines {
+  position: absolute;
+  right: 15px;
+  z-index: 99;
+  background-color: #fff;
+  border-color: rgba(0, 0, 0, 0.15);
+  border-style: solid;
+  border-width: 0 1px 1px 1px;
+  font-size: 14px;
+  padding: 20px;
+  max-height: 500px;
+  overflow-y: auto;
+}
