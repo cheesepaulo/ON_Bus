@@ -1,9 +1,9 @@
-//Atualiza a div map-canvas
+//Update the div map-canvas
 $(window).load(function() {
    loadScript();
 });
 
-// Configura parametro do google maps
+// Configure google maps params
 function loadScript() {
   console.log("map loading ...");
 
@@ -18,11 +18,11 @@ function loadScript() {
   document.body.appendChild(script);
 }
 
-// Inicializa o mapa
+// Initialize the map
 var map;
 function initialize() {
   var mapOptions = {
-          // Defini inicialização para uma coordenada de SP
+          // Define a start coordinates
           center: new google.maps.LatLng(-23.552133,-46.6375192),
           zoom: 12,
           mapTypeId: google.maps.MapTypeId.NORMAL,
@@ -36,7 +36,7 @@ function initialize() {
 
 }
 
-// Cria Marcação dos Onibus
+// Creates a bus marker
 function placeMarkerBus(p_lat,p_lng, linha,acessivel, carro) {
     var location = new google.maps.LatLng( p_lat, p_lng);
     var marker = new google.maps.Marker({
@@ -57,14 +57,32 @@ function placeMarkerBus(p_lat,p_lng, linha,acessivel, carro) {
     });
 }
 
-//Cria Balão de Informações
+//Creates a Stop marker
+function placeMarkerStop(p_lat, p_lng, endereco){
+  var location = new google.maps.LatLng( p_lat, p_lng);
+  var marker = new google.maps.Marker({
+    position: location,
+    map: map,
+    icon: createImage("../img/mark.png"),
+    animation: google.maps.Animation.DROP,
+    draggable: false
+  });
+  var infowindow = new google.maps.InfoWindow({
+    content: 'Endereço: ' + endereco
+  });
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.open(map,marker);
+    });
+}
+
+//Creates a information balloon
 function createInfoWindow(text){
   var infowindow = new google.maps.InfoWindow({
     content: text
   });
   return infowindow;
 }
-// Cria um icone para os marcadores
+  // Creates an icon for markers
 function createImage(url){
   var image = {
     url: url,

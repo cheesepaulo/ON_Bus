@@ -29,4 +29,12 @@ RSpec.describe HomeController, type: :controller do
       expect(response.status).to eql(200)
     end
   end
+
+  describe 'GET #getStopPointsByline' do
+    subject { get :getStopPointsByline, params: { search_term: 8000 } }
+
+    it 'return json sucess' do
+      expect(response.status).to eql(200)
+    end
+  end
 end
