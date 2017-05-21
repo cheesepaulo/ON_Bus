@@ -18,7 +18,15 @@ RSpec.describe HomeController, type: :controller do
 
   describe 'GET #getArrivalForecast' do
     it 'return json success' do
-      
+
+    end
+  end
+
+  describe 'GET #searchByTerm' do
+    subject { get :searchByTerm, params: { search_term: 8000 } }
+
+    it 'return json sucess' do
+      expect(response.status).to eql(200)
     end
   end
 end

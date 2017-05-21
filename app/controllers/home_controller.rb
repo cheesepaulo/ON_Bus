@@ -32,8 +32,8 @@ class HomeController < ApplicationController
   end
 
   def searchByTerm
-    if params[:line_code].present?
-      response = SPTrans::ArrivalForecastSearch.new.searchByTerm(params[:line_code])
+    if params[:search_term].present?
+      response = SPTrans::ArrivalForecastSearch.new.searchByTerm(params[:search_term])
       render json: response
     end
   end
