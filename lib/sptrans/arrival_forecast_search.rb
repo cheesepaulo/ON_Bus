@@ -40,17 +40,17 @@ module SPTrans
         puts e.backtrace.inspect
       end
     end
-    
-		def searchByTerm(line_code)
+
+		def searchByTerm(search_term)
 			begin
-				response = @client.get "#{ENV['API_URL']}/Linha/Buscar?termosBusca=#{line_code}", {}
+				response = @client.get "#{ENV['API_URL']}/Linha/Buscar?termosBusca=#{search_term}", {}
 				return JSON.parse(response.body)
 			rescue Exception => e
 				puts e.message
 				puts e.backtrace.inspect
 			end
 		end
-		
+
     def getArrivalForecast(stop_code, line_code)
       begin
         response = @client.get "#{ENV['API_URL']}/Previsao?codigoParada=#{stop_code}&codigoLinha=#{line_code}", {}
