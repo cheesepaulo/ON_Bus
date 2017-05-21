@@ -12,12 +12,12 @@ RSpec.describe HomeController, type: :controller do
     subject { get :getUpcomingBus, params: { stop_code: 123 } }
 
     xit 'return json sucess' do
-      expectresponse.status.to eql(200)
+      expect(response.status).to eql(200)
     end
   end
 
   describe 'GET #getArrivalForecast' do
-    it 'return json success' do
+    xit 'return json success' do
 
     end
   end
