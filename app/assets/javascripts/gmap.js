@@ -20,6 +20,7 @@ function loadScript() {
 
 // Initialize the map
 var map;
+
 function initialize() {
   var mapOptions = {
           // Define a start coordinates
@@ -63,7 +64,7 @@ function placeMarkerStop(p_lat, p_lng, endereco){
   var marker = new google.maps.Marker({
     position: location,
     map: map,
-    icon: createImage("../img/mark.png"),
+    icon: createImage("../img/stopbus.png"),
     animation: google.maps.Animation.DROP,
     draggable: false
   });
@@ -73,6 +74,76 @@ function placeMarkerStop(p_lat, p_lng, endereco){
   google.maps.event.addListener(marker, 'click', function() {
     infowindow.open(map,marker);
     });
+}
+
+//Creates a Start marker
+function placeMarkerStart(p_lat, p_lng, endereco){
+  var location = new google.maps.LatLng( p_lat, p_lng);
+  var marker = new google.maps.Marker({
+    position: location,
+    map: map,
+    icon: createImage("../img/start_line.png"),
+    animation: google.maps.Animation.DROP,
+    draggable: false
+  });
+  var infowindow = new google.maps.InfoWindow({
+    content: 'Endereço: ' + endereco
+  });
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.open(map,marker);
+    });
+}
+
+//Creates a End marker
+function placeMarkerEnd(p_lat, p_lng, endereco){
+  var location = new google.maps.LatLng( p_lat, p_lng);
+  var marker = new google.maps.Marker({
+    position: location,
+    map: map,
+    icon: createImage("../img/stop_line.png"),
+    animation: google.maps.Animation.DROP,
+    draggable: false
+  });
+  var infowindow = new google.maps.InfoWindow({
+    content: 'Endereço: ' + endereco
+  });
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.open(map,marker);
+    });
+}
+
+var lineSymbol = {
+  path: 'M 0,-1 0,1',
+  scale: 4,
+  strokeOpacity: 1,
+  strokeColor: '#393'
+};
+
+//Traceline of list Stopbus
+
+function traceline(start, end){
+
+  var city = " SÃO PAULO"
+  var directionsDisplay = new google.maps.DirectionsRenderer();
+  directionsDisplay.setMap(map);
+  var request = {
+    origin: start + city,
+    destination: end + city,
+    travelMode: google.maps.DirectionsTravelMode.TRANSIT,
+    transitOptions: {
+        modes: ['BUS'],
+        routingPreference: 'FEWER_TRANSFERS'}
+
+  };
+
+  var directionsService = new google.maps.DirectionsService();
+  directionsService.route(request, function(response, status) {
+    //Check if request is successful.
+    if (status == google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections(response); //Display the directions result
+    }
+  });
+
 }
 
 //Creates a information balloon
