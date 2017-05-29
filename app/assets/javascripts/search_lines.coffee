@@ -39,7 +39,8 @@ atualiza_map_busca_linha = ->
 $(document).ready ->
   # called by button btn-search
   $(".list-lines").hide()
-  $("#btn-search").click ->
+  $("#btn-search").click (event) ->
+    event.preventDefault()
     atualiza_map_busca_linha()
 
   $("#tx_termo_pesquisa").keypress (e) ->
