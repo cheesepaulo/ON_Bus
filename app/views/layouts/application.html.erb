@@ -24,6 +24,7 @@
           <a class="nav-item nav-link" href="#">Sobre</a>-->
           <% if user_signed_in? %>
             <span class="welcome-message">Olá, <%= current_user.name%></span>
+            <%= link_to 'Alterar Dados', edit_user_registration_path, class: 'btn btn-secondary change-data' %>
             <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-danger'%>
           <% else %>
             <%= link_to 'Login', new_user_session_path, class: 'btn btn-secondary login-btn' %>
