@@ -66,21 +66,10 @@
 
 .welcome-message {
   color: #ffffff;
-  margin-right: 10px;
-  line-height: 35px;
+  margin-right: 25px;
+  line-height: 40px;
 }
 
-.devise-links {
-  width: 100%;
-  float: left;
-  a {
-    color: #000000;
-    text-decoration: none;
-
-    &:hover {
-      color: #000000;
-      text-decoration: none;
-    }
-  }
-
+.login-btn {
+  margin-right: 15px;
 }

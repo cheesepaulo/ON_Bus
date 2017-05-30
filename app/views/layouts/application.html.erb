@@ -22,12 +22,14 @@
         <div class="navbar-nav ml-auto">
           <!--<a class="nav-item nav-link" href="#">Contato</a>
           <a class="nav-item nav-link" href="#">Sobre</a>-->
-          <% if user_signed_in? %>          
+          <% if user_signed_in? %>
             <span class="welcome-message">Olá, <%= current_user.name%></span>
             <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-danger'%>
           <% else %>
-            <%= link_to 'Login', new_user_session_path, class: 'btn btn-secondary'%>
+            <%= link_to 'Login', new_user_session_path, class: 'btn btn-secondary login-btn' %>
+            <%= link_to 'Cadastre-se', new_user_registration_path, class: 'btn btn-secondary' %>
           <% end %>
+
         </div>
       </div>
     </nav>
